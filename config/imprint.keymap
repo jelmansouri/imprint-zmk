@@ -52,34 +52,34 @@
         default_layer {
             display-name = "base";
             bindings = <
-&kp GRAVE      &kp Q  &kp W        &kp F        &kp P        &kp B                  &kp J       &kp L        &kp U        &kp Y        &kp MINUS  &kp EQUAL
-&kp TAB        &kp A  &hml LALT R  &hml LALT S  &hml LGUI T  &kp G                  &kp M       &hmr LGUI N  &hmr LALT E  &hmr LALT I  &kp O      &kp SEMICOLON
-&kp BACKSLASH  &kp Z  &kp X        &kp C        &kp D        &kp V                  &kp K       &kp H        &kp COMMA    &kp DOT      &kp SLASH  &kp SQT
-                      &mkp RCLK    &mkp LCLK                                                                 &kp LBKT     &kp RBKT
-                                                &kp ESC      &kp ENTER  &mo 3       &kp DEL     &kp SPACE    &kp BSPC
-                                                &mo 1        &kp LSHFT  &kp LGUI    &caps_word  &kp LSHFT    &mo 2
+&kp GRAVE      &kp Q  &kp W         &kp F        &kp P        &kp B                  &kp J       &kp L        &kp U        &kp Y         &kp MINUS  &kp EQUAL
+&kp TAB        &kp A  &hml LCTRL R  &hml LALT S  &hml LGUI T  &kp G                  &kp M       &hmr LGUI N  &hmr LALT E  &hmr LCTRL I  &kp O      &kp SEMICOLON
+&kp BACKSLASH  &kp Z  &kp X         &kp C        &kp D        &kp V                  &kp K       &kp H        &kp COMMA    &kp DOT       &kp SLASH  &kp SQT
+                      &mkp RCLK     &mkp LCLK                                                                 &kp LBKT     &kp RBKT
+                                                 &kp ESC      &kp ENTER  &mo 3       &kp DEL     &kp SPACE    &kp BSPC
+                                                 &mo 1        &kp LSHFT  &kp LGUI    &caps_word  &kp LSHFT    &mo 2
             >;
         };
 
         lower {
             display-name = "lower";
             bindings = <
-&kp LG(LS(N4))  &kp F9  &kp F10       &kp F11       &kp F12       &trans            &none   &kp N7        &kp N8        &kp N9        &trans  &trans
-&kp LG(LS(N5))  &kp F5  &hml LALT F6  &hml LALT F7  &hml LGUI F8  &trans            &none   &hmr LGUI N4  &hmr LALT N5  &hmr LALT N6  &none   &trans
-&trans          &kp F1  &kp F2        &kp F3        &kp F4        &trans            &kp N0  &kp N1        &kp N2        &kp N3        &trans  &none
-                        &trans        &trans                                                              &kp N0        &kp DOT
-                                                    &trans        &trans  &trans    &trans  &trans        &trans
-                                                    &trans        &trans  &trans    &trans  &trans        &trans
+&kp LG(LS(N4))  &kp F9  &kp F10        &kp F11       &kp F12       &trans            &none   &kp N7        &kp N8        &kp N9         &trans  &trans
+&kp LG(LS(N5))  &kp F5  &hml LCTRL F6  &hml LALT F7  &hml LGUI F8  &trans            &none   &hmr LGUI N4  &hmr LALT N5  &hmr LCTRL N6  &none   &trans
+&trans          &kp F1  &kp F2         &kp F3        &kp F4        &trans            &kp N0  &kp N1        &kp N2        &kp N3         &trans  &none
+                        &trans         &trans                                                              &kp N0        &kp DOT
+                                                     &trans        &trans  &trans    &trans  &trans        &trans
+                                                     &trans        &trans  &trans    &trans  &trans        &trans
             >;
         };
 
         raise {
             display-name = "raise";
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT          &kp HASH          &kp DOLLAR      &kp PERCENT            &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END    &none  &none
-&trans  &kp CARET        &hml LALT AMPS  &hml LCTRL ASTRK  &hml LGUI LPAR  &kp RPAR               &kp LEFT  &kp DOWN     &kp UP         &kp RIGHT  &none  &none
-&trans  &none            &none           &none             &kp LBRC        &kp RBRC               &trans    &trans       &trans         &trans     &none  &none
-                         &trans          &trans                                                                          &trans         &trans
+&trans  &kp EXCLAMATION  &kp AT           &kp HASH         &kp DOLLAR      &kp PERCENT            &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END    &none  &none
+&trans  &kp CARET        &hml LCTRL AMPS  &hml LALT ASTRK  &hml LGUI LPAR  &kp RPAR               &kp LEFT  &kp DOWN     &kp UP         &kp RIGHT  &none  &none
+&trans  &none            &none            &none            &kp LBRC        &kp RBRC               &trans    &trans       &trans         &trans     &none  &none
+                         &trans           &trans                                                                         &trans         &trans
                                                            &trans          &trans       &trans    &trans    &trans       &trans
                                                            &trans          &trans       &trans    &trans    &trans       &trans
             >;
@@ -109,10 +109,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,
         <&zip_xy_scaler 1 8>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
