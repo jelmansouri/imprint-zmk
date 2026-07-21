@@ -92,8 +92,8 @@
 &none  &kp LSHFT  &kp A   &kp S   &kp D   &kp F             &rgb_ug RGB_TOG  &rgb_ug RGB_COLOR_HSB(154,100,50)  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &bt BT_PRV
 &none  &kp LCTRL  &kp Z   &kp X   &kp C   &kp B             &none            &rgb_ug RGB_COLOR_HSB(35,99,48)    &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &bt BT_NXT
                   &trans  &trans                                                                                &trans           &trans
-                                  &trans  &trans  &trans    &trans           &kp SPACE                          &kp ESCAPE
-                                  &trans  &trans  &trans    &trans           &trans                             &trans
+                                  &trans  &trans  &trans    &mkp LCLK        &kp SPACE                          &kp BACKSPACE
+                                  &trans  &trans  &trans    &mkp RCLK        &kp ENTER                          &kp ESC
             >;
         };
     };
@@ -109,10 +109,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,
         <&zip_xy_scaler 1 16>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
